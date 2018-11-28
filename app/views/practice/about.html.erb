@@ -1,0 +1,20 @@
+<!-- about.html.erb -->
+
+<!-- Remember, internal stylesheet is not the best,
+    but we have no way to get a Ruby instance
+    variable into a CSS file, so we don't have
+    much of an alternative here -->
+<style>
+	.color_text {
+		color: <%= @color %>;
+		background-color: gold;
+	}
+
+</style>
+
+<p class="color_text">Hello You!</p>
+
+<%= form_tag index_path do %>
+	<p><%= text_field_tag :name, nil, placeholder: "Enter a name" %></p>
+	<p><%= submit_tag :submit %></p>
+<% end %>	
