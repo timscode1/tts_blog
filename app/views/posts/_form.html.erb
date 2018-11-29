@@ -10,23 +10,21 @@
       </ul>
     </div>
   <% end %>
+<!-- in posts/_form.html.erb -->
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :post_title %>
+  <div class="form-group">
+    <%= form.text_field :title, placeholder: "Blog Entry Title", class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :author %>
-    <%= form.text_field :author, id: :post_author %>
+  <div class="form-group">
+    <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
 
-  <div class="field">
-    <%= form.label :blog_entry %>
-    <%= form.text_area :blog_entry, id: :post_blog_entry %>
+  <div class="form-group">
+    <%= form.text_area :blog_entry, placeholder: "Tell Us Something...", class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Submit", class: "btn btn-primary" %>
   </div>
 <% end %>
