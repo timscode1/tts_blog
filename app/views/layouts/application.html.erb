@@ -11,10 +11,17 @@
   <body>
   	<div class="jumbotron">This is the top!</div>
   	<div class="container">
+
   <div class="pull-right">
     <% if user_signed_in? %>
-      <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+        Welcome, <%= current_user.username %>! 
+      <%= gravatar_tag current_user.email, size: 20 %>
+     <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary" %> 
+     <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
     <% end %>
+  </div>
+
+  
   </div>
     <%= yield %>
 
