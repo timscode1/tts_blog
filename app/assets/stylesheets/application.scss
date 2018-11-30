@@ -14,7 +14,20 @@
  *= require_self
  */
 
-
-
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+
+.myjumbo {
+	background-color: blue;
+	text-align: center;
+	margin-bottom: 0px;
+}
+
+.toppy {
+	font-size: 40px;
+	color: white;
+}
+
+.navbar {
+	background-color: green;	
+}
