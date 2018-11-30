@@ -1,0 +1,15 @@
+<h1>All the Posts for <%= @user.username %></h1>
+
+<% @user.posts.each do |post| %>
+	<div class="well">
+		<h3><%= post.user.username %></h3> says... <br>
+		<p><%= post.blog_entry.html_safe %></p>
+
+		<% post.comments.each do |comment| %>
+			<div class="well">
+				<%= comment.user.username %> commented... <br>
+				<%= comment.comment_entry %>
+			</div>
+		<% end %>
+	</div>
+<% end %>
